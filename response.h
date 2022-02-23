@@ -19,6 +19,8 @@ public:
   std::string expires;
   bool isPrivate;
   std::string firstLine;
+  bool valid;
+  
   response(){
     content = "";
     nocache = false;
@@ -29,7 +31,8 @@ public:
     ifnomatch="";
     ifmodifiedsince="";
     time1 = time(0);
-    expires =""; 
+    expires ="";
+    valid = false;
   }
   
   bool hasHeader(){
@@ -39,6 +42,7 @@ public:
   void setHeader(std::string first){
     header = true;
     firstLine = first;
+    valid = true;
   }
 
   bool appendResp(std::string resp){
