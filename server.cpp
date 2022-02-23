@@ -286,7 +286,9 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
      int len =  recv(sock_send,buf,sizeof(buf),0);
      if (len<=0)
        {
-	 send400Resp(sock_send, -1);
+	 mtx.lock();
+	 logFile<<"ERROR NULL REQUEST" <<std::endl;
+	 mtx.unlock();
 	 return; 
        }
      // buf[1000] = 0;
@@ -385,7 +387,7 @@ int main(void){
 
   if (sock_rec == -1)
     {
-      logFile<<"ERROR in creating socket to accept\n"<<std::endl;
+      logFile<<"ERROR creating socket to accept"<<std::endl;
       return -1;
     }
 
@@ -402,7 +404,7 @@ int main(void){
      int sock_send = sock_accept(sock_rec,&ip1);
      if (sock_send == -1)
        {
-	 logFile<<"(no-id): ERROR in connecting client" <<std::endl;
+	 logFile<<"ERROR connecting client" <<std::endl;
 	 continue;
        }
       

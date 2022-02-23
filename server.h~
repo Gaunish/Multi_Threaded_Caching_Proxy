@@ -1,5 +1,0 @@
-void reqConnect(request &req,int sock_send);
-void reqPost(request & req,int sock_send);
-void reqGet(request & req,int sock_send);
-
-
