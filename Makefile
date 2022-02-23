@@ -23,3 +23,9 @@ helper.o : helper.cpp
 
 cache.o : cache.cpp
 	g++ -g -c cache.cpp
+
+.PHONY:
+	clean
+
+clean:
+	rm -f *.o *~ 

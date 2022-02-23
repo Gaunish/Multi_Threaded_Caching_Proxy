@@ -1,10 +1,1 @@
-1: 'GET http://www.d.com/ HTTP/1.1' from www.d.com @ Wed Feb 23 16:25:05 2022
-1: Responding HTTP/1.1 502 Bad Gateway
-2: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 16:25:06 2022
-2: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
-3: 'CONNECT contile-images.services.mozilla.com:443 HTTP/1.1' from contile-images.services.mozilla.com @ Wed Feb 23 16:25:07 2022
-4: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 16:25:07 2022
-3: Requesting CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from contile-images.services.mozilla.com
-4: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
-5: 'GET http://fefko.vdede.com/ HTTP/1.1' from fefko.vdede.com @ Wed Feb 23 16:25:11 2022
-5: Responding HTTP/1.1 502 Bad Gateway
+-1: Responding HTTP/1.1 400 Bad Code
