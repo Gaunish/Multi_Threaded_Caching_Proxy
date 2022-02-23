@@ -22,12 +22,12 @@
 
 #define BACKLOG 10
 
-std::ofstream logFile("/var/log/erss/proxy.log");
+std::ofstream logFile;
 
 cache cacheRequest;
 std::mutex mtx;
 
-void reqConnect(request & req,int sock_send,char *buf, const char* port, char * ip, int sock_s)
+void reqConnect(request & req,int sock_send,char *buf, const char* port, char * ip, int sock_s, parser * p)
 {
   send(sock_send,"HTTP/1.1 200 OK\r\n\r\n",19,0);
   int nfds = 0; 
@@ -41,6 +41,11 @@ void reqConnect(request & req,int sock_send,char *buf, const char* port, char * 
    }
 
   fd_set readfds;
+  
+  std::string firstLine = p->getFirstLine(buf);
+  mtx.lock();
+  logFile << req._id << ": Requesting " << firstLine << " from " << req.host << std::endl;
+  mtx.unlock();
   
  while(1)
  {
@@ -78,7 +83,7 @@ void reqConnect(request & req,int sock_send,char *buf, const char* port, char * 
 	    }
 	}
     }
-  }        
+  }
 }
 
 void revalidation(int sock_send,int sock_s,request & req,response * cache_resp,char * resp)
@@ -105,7 +110,7 @@ std::string calculateTime(response* m)
   return expire;
 }
 
-void rec_req_send(int sock_s,int sock_send,char *resp,parser * p)
+response rec_req_send(int sock_s,int sock_send,char *resp,parser * p)
 {
   response out_resp; 
  
@@ -132,6 +137,7 @@ void rec_req_send(int sock_s,int sock_send,char *resp,parser * p)
 	break;
       }
     }
+  return out_resp;
 }
 
 void whole_validation(int sock_send,int sock_s,request & req,response * cache_resp,char *resp,parser*p)
@@ -164,13 +170,14 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
   send(sock_s, buf, 1000,0);
   char resp[65535] = {0};
   char mess[65535] = {0};
+  response out_resp;
   if (req.request_type==0)
    {
      // std::string respInCache;
      int type= -1; 
      response * cache_resp = cacheRequest.get_resp(req,type);
      if(cache_resp != NULL){
-	 if (type == 0)
+       if (type == 0)
 	 {
 	    mtx.lock();
 	    std::string expireTime =calculateTime(cache_resp);
@@ -189,10 +196,10 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
 	}
 	else  
 	{
-	      mtx.lock();
-	      logFile<<req._id<<": in cache, valid"<<std::endl;
-	      mtx.unlock();
-	      send(sock_send, cache_resp->content.c_str(), 65535, 0);
+	    mtx.lock();
+	    logFile<<req._id<<": in cache, valid"<<std::endl;
+	    mtx.unlock();
+	    send(sock_send, cache_resp->content.c_str(), 65535, 0);
 	      
 	 }
 	    
@@ -214,18 +221,31 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
 	       cacheRequest.insertReq(req,newRes);
 	       mtx.unlock();
 	   }
+
+	  //Log cache
+	  mtx.lock();
+          logFile << req._id << ": " << "not in cache" << std::endl; 
+	  mtx.unlock();
 	  
-	 rec_req_send(sock_s,sock_send,resp,p);
+	  //out_resp = rec_req_send(sock_s,sock_send,resp,p);
     	  
       }
    }
 
   
-  if (req.request_type ==1)
-   {
-     rec_req_send(sock_s,sock_send,resp,p);
-  
-    }
+  //if (req.request_type ==1)
+  //{
+     out_resp = rec_req_send(sock_s,sock_send,resp,p);
+     //}
+
+    //log request, response
+  std::string firstLine = p->getFirstLine(buf);
+  mtx.lock();
+  logFile << req._id << ": Requesting " << firstLine << " from " << req.host << std::endl;
+  logFile << req._id << ": Recieved " << out_resp.firstLine << " from " << req.host << std::endl;
+  logFile << req._id << ": Responding " << out_resp.firstLine << std::endl;
+  mtx.unlock();
+
 }
 
 
@@ -250,7 +270,14 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 
       //Log request
       std::string firstLine = p->getFirstLine(r);
-      logFile << req._id << ": '" << firstLine << "' from " << req.host  << " @ " << req.time << std::endl;  
+      mtx.lock();
+      time_t now = time(0);
+
+      // Convert now to tm struct for local timezone
+      tm* localtm = localtime(&now);
+      
+      logFile << req._id << ": '" << firstLine << "' from " << req.host  << " @ " << asctime(localtm);  
+      mtx.unlock();
       
       struct hostent * dest;
       const char * host  = req.host.c_str();
@@ -288,7 +315,10 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
       }
       //connect 
       else if (req.request_type==2){
-	reqConnect(req,sock_send,buf, port, ip, sock_s);
+	reqConnect(req,sock_send,buf, port, ip, sock_s, p);
+	  mtx.lock();
+	  logFile << req._id << ": Tunnel closed" << std::endl;
+	  mtx.unlock();
       }
       //Get post
       else{
@@ -302,7 +332,7 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 
 
 int main(void){
-
+  logFile.open("abc.txt");
   std::string * s = new std::string(PORT);
   // This socket is used for receiving response
   int sock_rec = get_sock(NULL, s->c_str(), 0);

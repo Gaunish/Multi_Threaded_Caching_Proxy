@@ -1,0 +1,210 @@
+1: 'CONNECT contile.services.mozilla.com:443 HTTP/1.1' from contile.services.mozilla.com @ Wed Feb 23 00:06:28 2022
+1: Requesting CONNECT contile.services.mozilla.com:443 HTTP/1.1 from contile.services.mozilla.com
+2: 'CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1' from firefox.settings.services.mozilla.com @ Wed Feb 23 00:06:28 2022
+3: 'POST http://r3.o.lencr.org/ HTTP/1.1' from r3.o.lencr.org @ Wed Feb 23 00:06:28 2022
+4: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+5: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+6: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+7: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+8: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+9: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:06:29 2022
+2: Requesting CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1 from firefox.settings.services.mozilla.com
+10: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:06:29 2022
+11: 'CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1' from firefox.settings.services.mozilla.com @ Wed Feb 23 00:06:29 2022
+4: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+5: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+6: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+7: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+8: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+9: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+10: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+11: Requesting CONNECT firefox.settings.services.mozilla.com:443 HTTP/1.1 from firefox.settings.services.mozilla.com
+12: 'CONNECT contile-images.services.mozilla.com:443 HTTP/1.1' from contile-images.services.mozilla.com @ Wed Feb 23 00:06:29 2022
+13: 'CONNECT contile-images.services.mozilla.com:443 HTTP/1.1' from contile-images.services.mozilla.com @ Wed Feb 23 00:06:29 2022
+14: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:06:29 2022
+15: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:06:29 2022
+16: 'POST http://r3.o.lencr.org/ HTTP/1.1' from r3.o.lencr.org @ Wed Feb 23 00:06:29 2022
+17: 'POST http://r3.o.lencr.org/ HTTP/1.1' from r3.o.lencr.org @ Wed Feb 23 00:06:29 2022
+18: 'POST http://r3.o.lencr.org/ HTTP/1.1' from r3.o.lencr.org @ Wed Feb 23 00:06:29 2022
+19: 'POST http://r3.o.lencr.org/ HTTP/1.1' from r3.o.lencr.org @ Wed Feb 23 00:06:29 2022
+12: Requesting CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from contile-images.services.mozilla.com
+13: Requesting CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from contile-images.services.mozilla.com
+14: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+15: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+20: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:06:29 2022
+20: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+8: Tunnel closed
+5: Tunnel closed
+6: Tunnel closed
+7: Tunnel closed
+21: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:06:29 2022
+21: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+22: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:06:29 2022
+22: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+22: Tunnel closed
+23: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:06:29 2022
+23: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+23: Tunnel closed
+24: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:06:30 2022
+24: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+4: Tunnel closed
+25: 'CONNECT www.youtube.com:443 HTTP/1.1' from www.youtube.com @ Wed Feb 23 00:06:31 2022
+25: Requesting CONNECT www.youtube.com:443 HTTP/1.1 from www.youtube.com
+26: 'POST http://ocsp.digicert.com/ HTTP/1.1' from ocsp.digicert.com @ Wed Feb 23 00:06:31 2022
+26: Requesting POST http://ocsp.digicert.com/ HTTP/1.1 from ocsp.digicert.com
+26: Recieved HTTP/1.1 200 OK from ocsp.digicert.com
+26: Responding HTTP/1.1 200 OK
+27: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:31 2022
+28: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:31 2022
+27: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+27: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+27: Responding HTTP/1.1 200 OK
+29: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:31 2022
+28: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+28: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+28: Responding HTTP/1.1 200 OK
+13: Tunnel closed
+29: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+29: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+29: Responding HTTP/1.1 200 OK
+20: Tunnel closed
+21: Tunnel closed
+14: Tunnel closed
+30: 'CONNECT i.ytimg.com:443 HTTP/1.1' from i.ytimg.com @ Wed Feb 23 00:06:31 2022
+30: Requesting CONNECT i.ytimg.com:443 HTTP/1.1 from i.ytimg.com
+31: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:31 2022
+31: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+31: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+31: Responding HTTP/1.1 200 OK
+32: 'CONNECT googleads.g.doubleclick.net:443 HTTP/1.1' from googleads.g.doubleclick.net @ Wed Feb 23 00:06:32 2022
+32: Requesting CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from googleads.g.doubleclick.net
+33: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+33: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+33: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+33: Responding HTTP/1.1 200 OK
+34: 'CONNECT www.gstatic.com:443 HTTP/1.1' from www.gstatic.com @ Wed Feb 23 00:06:32 2022
+34: Requesting CONNECT www.gstatic.com:443 HTTP/1.1 from www.gstatic.com
+35: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:06:32 2022
+35: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+36: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+36: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+36: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+36: Responding HTTP/1.1 200 OK
+37: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+37: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+37: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+37: Responding HTTP/1.1 200 OK
+38: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+39: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+40: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+41: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+42: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+43: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:06:32 2022
+38: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+39: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+40: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+41: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+42: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+43: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+44: 'CONNECT safebrowsing.googleapis.com:443 HTTP/1.1' from safebrowsing.googleapis.com @ Wed Feb 23 00:06:32 2022
+44: Requesting CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from safebrowsing.googleapis.com
+45: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+46: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+47: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+48: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:32 2022
+45: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+45: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+45: Responding HTTP/1.1 200 OK
+46: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+46: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+46: Responding HTTP/1.1 200 OK
+49: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:33 2022
+47: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+47: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+47: Responding HTTP/1.1 200 OK
+48: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+48: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+48: Responding HTTP/1.1 200 OK
+49: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+49: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+49: Responding HTTP/1.1 200 OK
+50: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:33 2022
+40: Tunnel closed
+43: Tunnel closed
+50: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+50: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+50: Responding HTTP/1.1 200 OK
+42: Tunnel closed
+41: Tunnel closed
+38: Tunnel closed
+44: Tunnel closed
+51: 'CONNECT adservice.google.com:443 HTTP/1.1' from adservice.google.com @ Wed Feb 23 00:06:36 2022
+51: Requesting CONNECT adservice.google.com:443 HTTP/1.1 from adservice.google.com
+52: 'CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr1---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:06:38 2022
+52: Requesting CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr1---sn-hjoj-jaul.googlevideo.com
+53: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 00:06:38 2022
+53: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+53: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+53: Responding HTTP/1.1 200 OK
+54: 'CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr1---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:06:38 2022
+54: Requesting CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr1---sn-hjoj-jaul.googlevideo.com
+55: 'CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr3---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:06:38 2022
+56: 'CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr3---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:06:38 2022
+55: Requesting CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr3---sn-hjoj-jaul.googlevideo.com
+56: Requesting CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr3---sn-hjoj-jaul.googlevideo.com
+57: 'CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr1---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:06:38 2022
+57: Requesting CONNECT rr1---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr1---sn-hjoj-jaul.googlevideo.com
+58: 'CONNECT lh3.googleusercontent.com:443 HTTP/1.1' from lh3.googleusercontent.com @ Wed Feb 23 00:06:38 2022
+58: Requesting CONNECT lh3.googleusercontent.com:443 HTTP/1.1 from lh3.googleusercontent.com
+59: 'CONNECT pagead2.googlesyndication.com:443 HTTP/1.1' from pagead2.googlesyndication.com @ Wed Feb 23 00:06:38 2022
+59: Requesting CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from pagead2.googlesyndication.com
+60: 'CONNECT www.facebook.com:443 HTTP/1.1' from www.facebook.com @ Wed Feb 23 00:06:44 2022
+60: Requesting CONNECT www.facebook.com:443 HTTP/1.1 from www.facebook.com
+61: 'POST http://ocsp.digicert.com/ HTTP/1.1' from ocsp.digicert.com @ Wed Feb 23 00:06:44 2022
+61: Requesting POST http://ocsp.digicert.com/ HTTP/1.1 from ocsp.digicert.com
+61: Recieved HTTP/1.1 200 OK from ocsp.digicert.com
+61: Responding HTTP/1.1 200 OK
+62: 'CONNECT static.xx.fbcdn.net:443 HTTP/1.1' from static.xx.fbcdn.net @ Wed Feb 23 00:06:44 2022
+63: 'CONNECT static.xx.fbcdn.net:443 HTTP/1.1' from static.xx.fbcdn.net @ Wed Feb 23 00:06:44 2022
+64: 'CONNECT static.xx.fbcdn.net:443 HTTP/1.1' from static.xx.fbcdn.net @ Wed Feb 23 00:06:44 2022
+65: 'CONNECT static.xx.fbcdn.net:443 HTTP/1.1' from static.xx.fbcdn.net @ Wed Feb 23 00:06:44 2022
+62: Requesting CONNECT static.xx.fbcdn.net:443 HTTP/1.1 from static.xx.fbcdn.net
+63: Requesting CONNECT static.xx.fbcdn.net:443 HTTP/1.1 from static.xx.fbcdn.net
+64: Requesting CONNECT static.xx.fbcdn.net:443 HTTP/1.1 from static.xx.fbcdn.net
+65: Requesting CONNECT static.xx.fbcdn.net:443 HTTP/1.1 from static.xx.fbcdn.net
+66: 'CONNECT safebrowsing.googleapis.com:443 HTTP/1.1' from safebrowsing.googleapis.com @ Wed Feb 23 00:06:44 2022
+66: Requesting CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from safebrowsing.googleapis.com
+66: Tunnel closed
+63: Tunnel closed
+65: Tunnel closed
+64: Tunnel closed
+67: 'CONNECT facebook.com:443 HTTP/1.1' from facebook.com @ Wed Feb 23 00:06:44 2022
+67: Requesting CONNECT facebook.com:443 HTTP/1.1 from facebook.com
+68: 'CONNECT static.xx.fbcdn.net:443 HTTP/1.1' from static.xx.fbcdn.net @ Wed Feb 23 00:06:44 2022
+68: Requesting CONNECT static.xx.fbcdn.net:443 HTTP/1.1 from static.xx.fbcdn.net
+68: Tunnel closed
+62: Tunnel closed
+60: Tunnel closed
+67: Tunnel closed
+54: Tunnel closed
+57: Tunnel closed
+51: Tunnel closed
+59: Tunnel closed
+52: Tunnel closed
+39: Tunnel closed
+58: Tunnel closed
+35: Tunnel closed
+56: Tunnel closed
+32: Tunnel closed
+12: Tunnel closed
+30: Tunnel closed
+34: Tunnel closed
+55: Tunnel closed
+9: Tunnel closed
+10: Tunnel closed
+11: Tunnel closed
+24: Tunnel closed
+2: Tunnel closed
+15: Tunnel closed
+25: Tunnel closed
+1: Tunnel closed

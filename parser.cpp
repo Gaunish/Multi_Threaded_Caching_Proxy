@@ -96,7 +96,7 @@ bool parser::parseResponse(std::string resp, response &r){
     if(status != "200"){
       return false;
     }
-    r.setHeader();
+    r.setHeader(firstLine);
   }
 
   bool out = r.appendResp(resp);
