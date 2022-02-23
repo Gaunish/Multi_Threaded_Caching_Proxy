@@ -4,6 +4,7 @@
 #include <cstring>
 #include <ctime>
 #include <vector>
+#include <stdexcept>
 //#include <boost/algorithm/string/trim.hpp>
 
 int getType(std::string s) 
@@ -84,16 +85,22 @@ std::string parser::getFirstLine(std::string req)
   return firstLine;
 }
 
+bool parser::checkHead(std::string req, response &r){
+  if(r.hasHeader()){
+    return true;
+  }
+  return req.find("\r\n\r\n") == std::string::npos;
+}
+
 bool parser::parseResponse(std::string resp, response &r){
-  size_t lineEnd = resp.find_first_of("\r\n");
-  std::string firstLine = resp.substr(0, lineEnd);
+  std::string firstLine = getFirstLine(resp);
   
   int word = firstLine.find(" ");
   std::string status = firstLine.substr(word + 1, 3); 
    
     
   if(!r.hasHeader()){
-    if(status != "200"){
+    if(status.compare("200") != 0){
       return false;
     }
     r.setHeader(firstLine);
@@ -105,6 +112,7 @@ bool parser::parseResponse(std::string resp, response &r){
 
 request parser::parseRequest(std::string request1)
 {
+  try{
   size_t a = request1.find_first_of("\r\n");
   std::string firstLine = request1.substr(0,a);
   std::string restLine = request1.substr(a+2);
@@ -126,8 +134,7 @@ request parser::parseRequest(std::string request1)
     {
       //port = ipLine.substr(ipLine.find_last_of(":")+1, 3);
       port = "443";
-      port = ipLine.substr(ipLine.find_last_of(":")+1,ipLine.find("\r\n")-ipLine.find_last_of(":")-1);
-      std::cout<<"a"<<port;
+      //port = ipLine.substr(ipLine.find_last_of(":")+1,ipLine.find("\r\n")-ipLine.find_last_of(":")
     }
   else
     {
@@ -153,15 +160,12 @@ request parser::parseRequest(std::string request1)
 	}
      	
     }
-
-    
-  
-  
       // cacheControl = "No specification";
-      
-  
-
-   return request(type,next1,ipFrom,timeCur,port,noCache,noStore,m);				 
+   return request(type,next1,ipFrom,timeCur,port,noCache,noStore,m);
+  }
+  catch(...){
+    throw std::invalid_argument("request invalid");
+  }
 }
 
 

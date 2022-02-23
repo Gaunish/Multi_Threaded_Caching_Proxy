@@ -14,6 +14,8 @@
 #include <ctime>
 #include <thread>
 #include <mutex>
+#include <regex>
+#include <stdexcept>
 
 //using namespace std;
 #include "server.h"
@@ -110,7 +112,15 @@ std::string calculateTime(response* m)
   return expire;
 }
 
-response rec_req_send(int sock_s,int sock_send,char *resp,parser * p)
+void send502Resp(int sock_send, request & req){
+  const char * err = "HTTP/1.1 502 Bad Gateway";
+  send(sock_send, err, sizeof(err), 0);
+  mtx.lock();
+  logFile << req._id << ": Responding " << err << std::endl;
+  mtx.unlock();
+}
+
+response rec_req_send(int sock_s,int sock_send,char *resp,parser * p, request & req)
 {
   response out_resp; 
  
@@ -128,8 +138,16 @@ response rec_req_send(int sock_s,int sock_send,char *resp,parser * p)
       //parse response, get </html> tag
       std::string response = resp;
       std::cout << response;
+
       bool out = p->parseResponse(response, out_resp);
-     
+      
+      //check if response is valid
+      if(p->checkHead(response, out_resp) == false){
+        send502Resp(sock_send, req);
+	out_resp.valid = false;
+	break;
+      }
+      
       send(sock_send,resp,finished,0);
 
       //found </html>, break from loop
@@ -171,7 +189,7 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
   char resp[65535] = {0};
   char mess[65535] = {0};
   response out_resp;
-  if (req.request_type==0)
+  /* if (req.request_type==0)
    {
      // std::string respInCache;
      int type= -1; 
@@ -230,24 +248,35 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
 	  //out_resp = rec_req_send(sock_s,sock_send,resp,p);
     	  
       }
-   }
+      }*/
 
   
   //if (req.request_type ==1)
   //{
-     out_resp = rec_req_send(sock_s,sock_send,resp,p);
+  out_resp = rec_req_send(sock_s,sock_send,resp,p, req);
      //}
 
     //log request, response
   std::string firstLine = p->getFirstLine(buf);
   mtx.lock();
   logFile << req._id << ": Requesting " << firstLine << " from " << req.host << std::endl;
+  if(out_resp.valid == true){
   logFile << req._id << ": Recieved " << out_resp.firstLine << " from " << req.host << std::endl;
   logFile << req._id << ": Responding " << out_resp.firstLine << std::endl;
+  }
   mtx.unlock();
 
 }
 
+
+void send400Resp(int sock_send, int id){
+  const char * err = "HTTP/1.1 400 Bad Code";
+  send(sock_send, err, sizeof(err), 0);
+  mtx.lock();
+  logFile << id << ": Responding " << err << std::endl;
+  mtx.unlock();
+      
+}
 
 void handleRequest(int sock_rec, cache cache_get, int sock_send){
     
@@ -257,7 +286,7 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
      int len =  recv(sock_send,buf,sizeof(buf),0);
      if (len<=0)
        {
-	 std::cerr<<"Invalid request"<<std::endl;
+	 send400Resp(sock_send, -1);
 	 return; 
        }
      // buf[1000] = 0;
@@ -266,7 +295,22 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
     //parse the request
       parser * p = new parser();
       std::string r = buf;
-      request req = p->parseRequest(buf);
+      request req;
+      try{
+	 req = p->parseRequest(buf);
+      }
+      catch(...){
+	send400Resp(sock_send, -1);
+	return;
+      }
+ 
+      //check if request is valid
+      if(req.port.compare("443") != 0 && req.port.compare("80") != 0){
+	send400Resp(sock_send, req._id);
+	return;
+      }
+   
+      
 
       //Log request
       std::string firstLine = p->getFirstLine(r);
@@ -275,7 +319,6 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 
       // Convert now to tm struct for local timezone
       tm* localtm = localtime(&now);
-      
       logFile << req._id << ": '" << firstLine << "' from " << req.host  << " @ " << asctime(localtm);  
       mtx.unlock();
       
@@ -285,8 +328,8 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 
       //get ip address
       if((dest = gethostbyname(host)) == NULL){
-	  perror("host-error:");
-	  return;
+	send502Resp(sock_send, req);
+	return;
       }
 
       char ip[100];
@@ -321,8 +364,11 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 	  mtx.unlock();
       }
       //Get post
-      else{
+      else if(req.request_type == 0 || req.request_type == 1){
 	req_Get_Post(req,sock_send,buf, port ,ip, sock_s,p);
+	}
+      else{
+	send400Resp(sock_send, req._id);
       }
 
       //close socket
