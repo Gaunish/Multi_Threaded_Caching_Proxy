@@ -276,7 +276,7 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
       // Convert now to tm struct for local timezone
       tm* localtm = localtime(&now);
       
-      logFile << req._id << ": '" << firstLine << "' from " << req.host  << " @ " << asctime(localtm) << std::endl;  
+      logFile << req._id << ": '" << firstLine << "' from " << req.host  << " @ " << asctime(localtm);  
       mtx.unlock();
       
       struct hostent * dest;
