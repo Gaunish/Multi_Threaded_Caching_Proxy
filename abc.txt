@@ -1,0 +1,96 @@
+1: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:02:21 2022
+
+1: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+2: 'CONNECT www.gstatic.com:443 HTTP/1.1' from www.gstatic.com @ Wed Feb 23 00:02:22 2022
+
+2: Requesting CONNECT www.gstatic.com:443 HTTP/1.1 from www.gstatic.com
+3: 'CONNECT adservice.google.com:443 HTTP/1.1' from adservice.google.com @ Wed Feb 23 00:02:22 2022
+
+3: Requesting CONNECT adservice.google.com:443 HTTP/1.1 from adservice.google.com
+4: 'CONNECT googleads.g.doubleclick.net:443 HTTP/1.1' from googleads.g.doubleclick.net @ Wed Feb 23 00:02:23 2022
+
+4: Requesting CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from googleads.g.doubleclick.net
+5: 'CONNECT encrypted-tbn0.gstatic.com:443 HTTP/1.1' from encrypted-tbn0.gstatic.com @ Wed Feb 23 00:02:23 2022
+
+5: Requesting CONNECT encrypted-tbn0.gstatic.com:443 HTTP/1.1 from encrypted-tbn0.gstatic.com
+6: 'CONNECT safebrowsing.googleapis.com:443 HTTP/1.1' from safebrowsing.googleapis.com @ Wed Feb 23 00:02:38 2022
+
+6: Requesting CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from safebrowsing.googleapis.com
+6: Tunnel closed
+7: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 00:02:38 2022
+
+7: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+8: 'CONNECT www.youtube.com:443 HTTP/1.1' from www.youtube.com @ Wed Feb 23 00:02:40 2022
+
+8: Requesting CONNECT www.youtube.com:443 HTTP/1.1 from www.youtube.com
+9: 'CONNECT i.ytimg.com:443 HTTP/1.1' from i.ytimg.com @ Wed Feb 23 00:02:41 2022
+
+9: Requesting CONNECT i.ytimg.com:443 HTTP/1.1 from i.ytimg.com
+10: 'CONNECT fonts.gstatic.com:443 HTTP/1.1' from fonts.gstatic.com @ Wed Feb 23 00:02:42 2022
+
+10: Requesting CONNECT fonts.gstatic.com:443 HTTP/1.1 from fonts.gstatic.com
+10: Tunnel closed
+11: 'CONNECT yt3.ggpht.com:443 HTTP/1.1' from yt3.ggpht.com @ Wed Feb 23 00:02:42 2022
+
+11: Requesting CONNECT yt3.ggpht.com:443 HTTP/1.1 from yt3.ggpht.com
+12: 'CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr2---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:02:43 2022
+
+12: Requesting CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr2---sn-hjoj-jaul.googlevideo.com
+13: 'CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr2---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:02:44 2022
+
+13: Requesting CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr2---sn-hjoj-jaul.googlevideo.com
+14: 'CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr3---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:02:44 2022
+
+15: 'CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr3---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:02:44 2022
+
+14: Requesting CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr3---sn-hjoj-jaul.googlevideo.com
+15: Requesting CONNECT rr3---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr3---sn-hjoj-jaul.googlevideo.com
+16: 'CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1' from rr2---sn-hjoj-jaul.googlevideo.com @ Wed Feb 23 00:02:44 2022
+
+16: Requesting CONNECT rr2---sn-hjoj-jaul.googlevideo.com:443 HTTP/1.1 from rr2---sn-hjoj-jaul.googlevideo.com
+17: 'CONNECT lh5.googleusercontent.com:443 HTTP/1.1' from lh5.googleusercontent.com @ Wed Feb 23 00:02:44 2022
+
+17: Requesting CONNECT lh5.googleusercontent.com:443 HTTP/1.1 from lh5.googleusercontent.com
+18: 'CONNECT pagead2.googlesyndication.com:443 HTTP/1.1' from pagead2.googlesyndication.com @ Wed Feb 23 00:02:44 2022
+
+18: Requesting CONNECT pagead2.googlesyndication.com:443 HTTP/1.1 from pagead2.googlesyndication.com
+19: 'CONNECT ad.doubleclick.net:443 HTTP/1.1' from ad.doubleclick.net @ Wed Feb 23 00:02:44 2022
+
+20: 'CONNECT ade.googlesyndication.com:443 HTTP/1.1' from ade.googlesyndication.com @ Wed Feb 23 00:02:44 2022
+
+19: Requesting CONNECT ad.doubleclick.net:443 HTTP/1.1 from ad.doubleclick.net
+20: Requesting CONNECT ade.googlesyndication.com:443 HTTP/1.1 from ade.googlesyndication.com
+21: 'CONNECT safebrowsing.googleapis.com:443 HTTP/1.1' from safebrowsing.googleapis.com @ Wed Feb 23 00:02:45 2022
+
+21: Requesting CONNECT safebrowsing.googleapis.com:443 HTTP/1.1 from safebrowsing.googleapis.com
+21: Tunnel closed
+22: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 00:02:52 2022
+
+22: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+23: 'CONNECT contile-images.services.mozilla.com:443 HTTP/1.1' from contile-images.services.mozilla.com @ Wed Feb 23 00:02:52 2022
+
+24: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 00:02:52 2022
+
+23: Requesting CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from contile-images.services.mozilla.com
+24: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+24: Tunnel closed
+16: Tunnel closed
+15: Tunnel closed
+22: Tunnel closed
+14: Tunnel closed
+23: Tunnel closed
+13: Tunnel closed
+12: Tunnel closed
+18: Tunnel closed
+9: Tunnel closed
+20: Tunnel closed
+11: Tunnel closed
+17: Tunnel closed
+19: Tunnel closed
+7: Tunnel closed
+8: Tunnel closed
+3: Tunnel closed
+4: Tunnel closed
+5: Tunnel closed
+1: Tunnel closed
+2: Tunnel closed

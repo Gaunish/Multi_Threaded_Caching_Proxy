@@ -18,6 +18,7 @@ public:
   time_t time1;
   std::string expires;
   bool isPrivate;
+  std::string firstLine;
   response(){
     content = "";
     nocache = false;
@@ -35,8 +36,9 @@ public:
     return header;
   }
    
-  void setHeader(){
+  void setHeader(std::string first){
     header = true;
+    firstLine = first;
   }
 
   bool appendResp(std::string resp){

@@ -1,0 +1,12 @@
+1: 'CONNECT www.facebook.com:443 HTTP/1.1' from www.facebook.com @ 0
+1: Requesting CONNECT www.facebook.com:443 HTTP/1.1 from www.facebook.com
+2: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ 0
+2: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+2: Tunnel closed3: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ 0
+3: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+4: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ 0
+4: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+5: 'CONNECT adservice.google.com:443 HTTP/1.1' from adservice.google.com @ 0
+5: Requesting CONNECT adservice.google.com:443 HTTP/1.1 from adservice.google.com
+6: 'CONNECT googleads.g.doubleclick.net:443 HTTP/1.1' from googleads.g.doubleclick.net @ 0
+6: Requesting CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from googleads.g.doubleclick.net
