@@ -307,10 +307,10 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
       }
  
       //check if request is valid
-      if(req.port.compare("443") != 0 && req.port.compare("80") != 0){
+      /*   if(req.port.compare("443") != 0 && req.port.compare("80") != 0){
 	send400Resp(sock_send, req._id);
 	return;
-      }
+	}*/
    
       
 
@@ -385,17 +385,18 @@ int main(void){
   // This socket is used for receiving response
   int sock_rec = get_sock(NULL, s->c_str(), 0);
 
-  if (sock_rec == -1)
-    {
+  if (sock_rec == -1){
       logFile<<"ERROR creating socket to accept"<<std::endl;
+      free(s);
       return -1;
-    }
+  }
 
   //Init CACHE
   cache cache_get;
   
   //wait for incoming connections
   if(listen(sock_rec, BACKLOG) == -1){
+    free(s);
     return -1;
   }
 
@@ -411,6 +412,7 @@ int main(void){
      std::thread th (&handleRequest, sock_rec, cache_get, sock_send);
      th.detach();
   }
+  free(s);
   close(sock_rec);
   return 0;
 }

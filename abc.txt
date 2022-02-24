@@ -1,1 +1,18 @@
--1: Responding HTTP/1.1 400 Bad Code
+1: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 19:23:28 2022
+1: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
+2: 'CONNECT www.gstatic.com:443 HTTP/1.1' from www.gstatic.com @ Wed Feb 23 19:23:29 2022
+2: Requesting CONNECT www.gstatic.com:443 HTTP/1.1 from www.gstatic.com
+3: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 19:23:29 2022
+3: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+3: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+3: Responding HTTP/1.1 200 OK
+4: 'CONNECT apis.google.com:443 HTTP/1.1' from apis.google.com @ Wed Feb 23 19:23:29 2022
+4: Requesting CONNECT apis.google.com:443 HTTP/1.1 from apis.google.com
+5: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 19:23:30 2022
+5: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
+5: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
+5: Responding HTTP/1.1 200 OK
+6: 'CONNECT adservice.google.com:443 HTTP/1.1' from adservice.google.com @ Wed Feb 23 19:23:30 2022
+6: Requesting CONNECT adservice.google.com:443 HTTP/1.1 from adservice.google.com
+7: 'CONNECT googleads.g.doubleclick.net:443 HTTP/1.1' from googleads.g.doubleclick.net @ Wed Feb 23 19:23:30 2022
+7: Requesting CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from googleads.g.doubleclick.net
