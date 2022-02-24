@@ -92,7 +92,7 @@ bool parser::checkHead(std::string req, response &r){
   return req.find("\r\n\r\n") == std::string::npos;
 }
 
-bool parser::parseResponse(std::string resp, response &r){
+void parser::parseResponse(std::string resp, response &r, int finished, char * resp_c){
   std::string firstLine = getFirstLine(resp);
   
   int word = firstLine.find(" ");
@@ -101,13 +101,13 @@ bool parser::parseResponse(std::string resp, response &r){
     
   if(!r.hasHeader()){
     if(status.compare("200") != 0){
-      return false;
+      return;
     }
     r.setHeader(firstLine);
   }
 
-  bool out = r.appendResp(resp);
-  return out;
+  r.appendResp(resp_c, finished);
+  return;
 }
 
 request parser::parseRequest(std::string request1)

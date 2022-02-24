@@ -1,5 +1,8 @@
 # proxy-gg-ch
 
+I AM NOT ABLE TO DO DOCKER
+i tried for fours hours but couldn't do it :(.
+
 Welcome!
 
 This is homepage for Http proxy server created by Gaunish garg and Chengke Tang ! :)

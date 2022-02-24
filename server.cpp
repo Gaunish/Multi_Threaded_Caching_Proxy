@@ -137,9 +137,9 @@ response rec_req_send(int sock_s,int sock_send,char *resp,parser * p, request & 
 
       //parse response, get </html> tag
       std::string response = resp;
-      std::cout << response;
+      //std::cout << response;
 
-      bool out = p->parseResponse(response, out_resp);
+      p->parseResponse(response, out_resp, finished, resp);
       
       //check if response is valid
       if(p->checkHead(response, out_resp) == false){
@@ -150,14 +150,11 @@ response rec_req_send(int sock_s,int sock_send,char *resp,parser * p, request & 
       
       send(sock_send,resp,finished,0);
 
-      //found </html>, break from loop
-      if(out){
-	break;
-      }
     }
   return out_resp;
 }
 
+/*
 void whole_validation(int sock_send,int sock_s,request & req,response * cache_resp,char *resp,parser*p)
 {
   char mess[65536]={0};  
@@ -181,8 +178,21 @@ void whole_validation(int sock_send,int sock_s,request & req,response * cache_re
 	const char* m = cache_resp->content.c_str(); 
 	send(sock_s,m,65535,0);
       }
-}
+      }*/
 
+int parseAge(std::string resp){
+  std::string buf("max-age");
+  size_t i = resp.find("max-age");
+  i += 8;
+  std::string buf2("\n");
+  size_t j = resp.find("\n", i);
+  //std::cout << "INTEGERS : ---" << i << " " << j << " " << resp.size();
+  std::string out = resp.substr(i, j - i);
+  //std::cout << out << std::endl;
+  int k = atoi(out.c_str());
+  return k;
+}
+      
 void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char * ip, int sock_s, parser * p)
 {
   send(sock_s, buf, 1000,0);
@@ -249,17 +259,53 @@ void req_Get_Post(request & req,int sock_send,char *buf, const char * port, char
     	  
       }
       }*/
-
   
-  //if (req.request_type ==1)
-  //{
-  out_resp = rec_req_send(sock_s,sock_send,resp,p, req);
-     //}
-
-    //log request, response
   std::string firstLine = p->getFirstLine(buf);
   mtx.lock();
   logFile << req._id << ": Requesting " << firstLine << " from " << req.host << std::endl;
+  mtx.unlock();
+  //if (req.request_type ==1)
+  //{
+  if(req.request_type == 0){
+  mtx.lock();
+  response * out = cacheRequest.get_resp(req);
+  mtx.unlock();
+    if(out != NULL){
+      time_t now = time(0);
+      if(out->content.size() != 0){
+        int max_age = parseAge(out->content);
+	time_t t2 = out->time1;
+        //std::cout << "CACHED-----------------------------------------\n" << difftime(out->curr_time, now) << " " << asctime(gmtime(&t2)) << " " << std::endl;
+	if(difftime(t2, now) > max_age){
+          send(sock_send, out->content.c_str(), out->content.size(), 0);
+	  logFile << req._id << ": in cache, valid" << std::endl;
+          return;
+	  }
+	else{
+	  std::string time_res = asctime(gmtime(&now));
+	  logFile << req._id << ": cached, expired at " << time_res << std::endl;
+	}
+    
+      }
+    }
+    else{
+      logFile << req._id << ": not in cache" << std::endl;
+    }
+  }
+  
+  out_resp = rec_req_send(sock_s,sock_send,resp,p, req);
+     //}
+
+  //insert into cache
+  mtx.lock();
+  if(req.request_type == 0){
+    cacheRequest.insertReq(req, out_resp);
+  }
+  mtx.unlock();
+
+    //log request, response
+  //std::string firstLine = p->getFirstLine(buf);
+  mtx.lock();
   if(out_resp.valid == true){
   logFile << req._id << ": Recieved " << out_resp.firstLine << " from " << req.host << std::endl;
   logFile << req._id << ": Responding " << out_resp.firstLine << std::endl;
@@ -273,7 +319,13 @@ void send400Resp(int sock_send, int id){
   const char * err = "HTTP/1.1 400 Bad Code";
   send(sock_send, err, sizeof(err), 0);
   mtx.lock();
-  logFile << id << ": Responding " << err << std::endl;
+  if(id == -1){
+    logFile << "(no-id)";
+  }
+  else{
+    logFile << id;
+  }
+  logFile << ": Responding " << err << std::endl;
   mtx.unlock();
       
 }
@@ -292,7 +344,7 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 	 return; 
        }
      // buf[1000] = 0;
-     std::cout << buf << std::endl;
+     //std::cout << buf << std::endl;
 
     //parse the request
       parser * p = new parser();
@@ -380,7 +432,9 @@ void handleRequest(int sock_rec, cache cache_get, int sock_send){
 
 
 int main(void){
-  logFile.open("abc.txt");
+  logFile.open("/var/log/erss/proxy.log");
+  //logFile.open("abc.txt");
+
   std::string * s = new std::string(PORT);
   // This socket is used for receiving response
   int sock_rec = get_sock(NULL, s->c_str(), 0);

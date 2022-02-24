@@ -7,7 +7,8 @@ class parser{
  public:
   parser(){
   }
-  bool parseResponse(std::string resp, response &r);
+  
+  void parseResponse(std::string resp, response &r, int finished, char * resp_c);
   request parseRequest(std::string request1);
   response parseResponse1(std::string m);
   std::string getFirstLine(std::string req);
