@@ -1,18 +1,109 @@
-1: 'CONNECT www.google.com:443 HTTP/1.1' from www.google.com @ Wed Feb 23 19:23:28 2022
-1: Requesting CONNECT www.google.com:443 HTTP/1.1 from www.google.com
-2: 'CONNECT www.gstatic.com:443 HTTP/1.1' from www.gstatic.com @ Wed Feb 23 19:23:29 2022
-2: Requesting CONNECT www.gstatic.com:443 HTTP/1.1 from www.gstatic.com
-3: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 19:23:29 2022
-3: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
-3: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
-3: Responding HTTP/1.1 200 OK
-4: 'CONNECT apis.google.com:443 HTTP/1.1' from apis.google.com @ Wed Feb 23 19:23:29 2022
-4: Requesting CONNECT apis.google.com:443 HTTP/1.1 from apis.google.com
-5: 'POST http://ocsp.pki.goog/gts1c3 HTTP/1.1' from ocsp.pki.goog @ Wed Feb 23 19:23:30 2022
-5: Requesting POST http://ocsp.pki.goog/gts1c3 HTTP/1.1 from ocsp.pki.goog
-5: Recieved HTTP/1.1 200 OK from ocsp.pki.goog
-5: Responding HTTP/1.1 200 OK
-6: 'CONNECT adservice.google.com:443 HTTP/1.1' from adservice.google.com @ Wed Feb 23 19:23:30 2022
-6: Requesting CONNECT adservice.google.com:443 HTTP/1.1 from adservice.google.com
-7: 'CONNECT googleads.g.doubleclick.net:443 HTTP/1.1' from googleads.g.doubleclick.net @ Wed Feb 23 19:23:30 2022
-7: Requesting CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from googleads.g.doubleclick.net
+1: 'GET http://example.com/ HTTP/1.1' from example.com @ Wed Feb 23 23:10:52 2022
+1: Requesting GET http://example.com/ HTTP/1.1 from example.com
+1: not in cache
+1: Recieved HTTP/1.1 200 OK from example.com
+1: Responding HTTP/1.1 200 OK
+2: 'GET http://example.com/favicon.ico HTTP/1.1' from example.com @ Wed Feb 23 23:10:53 2022
+2: Requesting GET http://example.com/favicon.ico HTTP/1.1 from example.com
+2: not in cache
+2: Responding HTTP/1.1 502 Bad Gateway
+3: 'GET http://example.com/ HTTP/1.1' from example.com @ Wed Feb 23 23:10:55 2022
+3: Requesting GET http://example.com/ HTTP/1.1 from example.com
+3: in cache, valid
+4: 'GET http://example.com/ HTTP/1.1' from example.com @ Wed Feb 23 23:10:56 2022
+4: Requesting GET http://example.com/ HTTP/1.1 from example.com
+4: in cache, valid
+5: 'CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1' from incoming.telemetry.mozilla.org @ Wed Feb 23 23:11:06 2022
+5: Requesting CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from incoming.telemetry.mozilla.org
+6: 'CONNECT contile-images.services.mozilla.com:443 HTTP/1.1' from contile-images.services.mozilla.com @ Wed Feb 23 23:11:06 2022
+6: Requesting CONNECT contile-images.services.mozilla.com:443 HTTP/1.1 from contile-images.services.mozilla.com
+7: 'CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1' from img-getpocket.cdn.mozilla.net @ Wed Feb 23 23:11:06 2022
+7: Requesting CONNECT img-getpocket.cdn.mozilla.net:443 HTTP/1.1 from img-getpocket.cdn.mozilla.net
+8: 'GET http://example.com/ HTTP/1.1' from example.com @ Wed Feb 23 23:11:09 2022
+8: Requesting GET http://example.com/ HTTP/1.1 from example.com
+8: in cache, valid
+9: 'GET http://example.com/favicon.ico HTTP/1.1' from example.com @ Wed Feb 23 23:11:09 2022
+9: Requesting GET http://example.com/favicon.ico HTTP/1.1 from example.com
+9: Responding HTTP/1.1 502 Bad Gateway
+10: 'GET http://example.com/ HTTP/1.1' from example.com @ Wed Feb 23 23:11:19 2022
+10: Requesting GET http://example.com/ HTTP/1.1 from example.com
+10: in cache, valid
+11: 'GET http://example.com/favicon.ico HTTP/1.1' from example.com @ Wed Feb 23 23:11:19 2022
+11: Requesting GET http://example.com/favicon.ico HTTP/1.1 from example.com
+11: Responding HTTP/1.1 502 Bad Gateway
+12: 'GET http://httpbin.org/ HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:32 2022
+12: Requesting GET http://httpbin.org/ HTTP/1.1 from httpbin.org
+12: not in cache
+12: Recieved HTTP/1.1 200 OK from httpbin.org
+12: Responding HTTP/1.1 200 OK
+13: 'GET http://httpbin.org/flasgger_static/swagger-ui.css HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:32 2022
+14: 'CONNECT fonts.googleapis.com:443 HTTP/1.1' from fonts.googleapis.com @ Wed Feb 23 23:11:32 2022
+15: 'GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:32 2022
+16: 'GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:32 2022
+17: 'GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:32 2022
+13: Requesting GET http://httpbin.org/flasgger_static/swagger-ui.css HTTP/1.1 from httpbin.org
+13: not in cache
+14: Requesting CONNECT fonts.googleapis.com:443 HTTP/1.1 from fonts.googleapis.com
+15: Requesting GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1 from httpbin.org
+15: not in cache
+17: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1 from httpbin.org
+17: not in cache
+16: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1 from httpbin.org
+16: not in cache
+15: Recieved HTTP/1.1 200 OK from httpbin.org
+15: Responding HTTP/1.1 200 OK
+13: Recieved HTTP/1.1 200 OK from httpbin.org
+13: Responding HTTP/1.1 200 OK
+18: 'CONNECT fonts.gstatic.com:443 HTTP/1.1' from fonts.gstatic.com @ Wed Feb 23 23:11:32 2022
+18: Requesting CONNECT fonts.gstatic.com:443 HTTP/1.1 from fonts.gstatic.com
+17: Recieved HTTP/1.1 200 OK from httpbin.org
+17: Responding HTTP/1.1 200 OK
+16: Recieved HTTP/1.1 200 OK from httpbin.org
+16: Responding HTTP/1.1 200 OK
+19: 'GET http://httpbin.org/static/favicon.ico HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:33 2022
+20: 'GET http://httpbin.org/spec.json HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:33 2022
+19: Requesting GET http://httpbin.org/static/favicon.ico HTTP/1.1 from httpbin.org
+19: not in cache
+20: Requesting GET http://httpbin.org/spec.json HTTP/1.1 from httpbin.org
+20: not in cache
+19: Recieved HTTP/1.1 200 OK from httpbin.org
+19: Responding HTTP/1.1 200 OK
+20: Recieved HTTP/1.1 200 OK from httpbin.org
+20: Responding HTTP/1.1 200 OK
+21: 'GET http://httpbin.org/ HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:37 2022
+21: Requesting GET http://httpbin.org/ HTTP/1.1 from httpbin.org
+21: in cache, valid
+22: 'GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:37 2022
+23: 'GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:37 2022
+24: 'GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:37 2022
+22: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1 from httpbin.org
+23: Requesting GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1 from httpbin.org
+24: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1 from httpbin.org
+23: in cache, valid
+24: in cache, valid
+22: in cache, valid
+25: 'GET http://httpbin.org/spec.json HTTP/1.1' from httpbin.org @ Wed Feb 23 23:11:38 2022
+25: Requesting GET http://httpbin.org/spec.json HTTP/1.1 from httpbin.org
+25: in cache, valid
+26: 'GET http://httpbin.org/ HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:01 2022
+26: Requesting GET http://httpbin.org/ HTTP/1.1 from httpbin.org
+26: in cache, valid
+27: 'GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+28: 'GET http://httpbin.org/flasgger_static/swagger-ui.css HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+29: 'GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+30: 'GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+27: Requesting GET http://httpbin.org/flasgger_static/lib/jquery.min.js HTTP/1.1 from httpbin.org
+28: Requesting GET http://httpbin.org/flasgger_static/swagger-ui.css HTTP/1.1 from httpbin.org
+28: Requesting GET http://httpbin.org/flasgger_static/swagger-ui.css HTTP/1.1 from httpbin.org
+27: in cache, valid
+29: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-standalone-preset.js HTTP/1.1 from httpbin.org
+30: Requesting GET http://httpbin.org/flasgger_static/swagger-ui-bundle.js HTTP/1.1 from httpbin.org
+28: in cache, valid
+29: in cache, valid
+30: in cache, valid
+31: 'GET http://httpbin.org/static/favicon.ico HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+32: 'GET http://httpbin.org/spec.json HTTP/1.1' from httpbin.org @ Wed Feb 23 23:12:02 2022
+32: Requesting GET http://httpbin.org/spec.json HTTP/1.1 from httpbin.org
+31: Requesting GET http://httpbin.org/static/favicon.ico HTTP/1.1 from httpbin.org
+32: in cache, valid
+31: in cache, valid

@@ -2,6 +2,7 @@
 #include<string>
 #include<sstream>
 #include <ctime>
+#include <iostream> 
 class response{
 public:
   
@@ -20,6 +21,7 @@ public:
   bool isPrivate;
   std::string firstLine;
   bool valid;
+  time_t curr_time;
   
   response(){
     content = "";
@@ -45,8 +47,8 @@ public:
     valid = true;
   }
 
-  bool appendResp(std::string resp){
-    std::istringstream iss(resp);
+  void appendResp(char * resp, int finished){
+    /*std::istringstream iss(resp);
     std::string line;
     while(std::getline(iss, line)){
       if(line.length() >= 7){
@@ -61,5 +63,15 @@ public:
       content += "\n";
     }
     return false;
+    }*/
+    std::vector<char> buffer;
+   
+    for(int i = 0; i < finished; i++){
+      buffer.push_back(resp[i]);
+    }
+    
+    std::string s(buffer.begin(), buffer.end());
+    content += s;
+    //std::cout << "---------------------\n" << content << "------------\n";
   }
 };
