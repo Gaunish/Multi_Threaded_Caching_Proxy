@@ -1,16 +1,17 @@
 # proxy-gg-ch
 
-I AM NOT ABLE TO DO DOCKER
-i tried for fours hours but couldn't do it :(.
-
 Welcome!
 
-This is homepage for Http proxy server created by Gaunish garg and Chengke Tang ! :)
+**This is homepage for Http proxy server created by Gaunish garg and Chengke Tang ! :)**
 
 -----
 INFO
 ----
 
-1) We have written testcases output, input in testcases.txt
+**The project involves a multi-threaded HTTP Proxy server in C++ capable of handling REST APIs such as Get, Post, Connect. Deployed using docker.**
 
-2) We have talked about potential dangers and exception guarantee, proxy server in danger_log.txt
+It connects to firefox by changing it's setting to point to server ip address, port.
+
+* It handles concurrent requests via multiple threads effectively 
+* It is Robust to external failures such as error response, corrupted response, malformed request.
+* It logs the requests and errors in a text file.
